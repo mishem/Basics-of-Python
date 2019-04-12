@@ -5,44 +5,41 @@
 
 import os
 
-# def make_dir (name):
-#     try:
-#         os.mkdir(name)
-#     # for i in range(1,10):
-#     #     os.mkdir('dir_' + str(i))
-#     except FileExistsError:
-#         print('dir_{} - уже существует'.format(name))
-#
-# def remove_dir(name):
-#
-#     try:
-#         os.removedirs(name)
-#      # for i in range(1,10):
-#      #     os.removedirs('dir_' + str(i))
-#     except FileNotFoundError:
-#         print('dir_{} - папка не существует'.format(name))
-#
-# def start ():
-#     answer =''
-#
-#     while answer != '3':
-#
-#         answer = input('Выберите пункт меню:\n'
-#                        '1. Создать папки dir_1 - dir_9\n'
-#                        '2. Удалить папки dir_1 - dir_9\n'
-#                        '3. Выход\n')
-#         if answer =='3':
-#             break
-#         if answer == '1':
-#             for i in range(1, 10):
-#                 make_dir('dir_' + str(i))
-#
-#         elif answer == '2':
-#             for i in range(1, 10):
-#                 remove_dir('dir_' + str(i))
-#
-# if __name__ == '__main__':
-#     start()
+def make_dir (name):
+    try:
+        os.mkdir(name)
+    except FileExistsError:
+        print('dir_{} - существует'.format(name))
+
+def remove_dir(name):
+
+    try:
+        os.removedirs(name)
+
+    except FileNotFoundError:
+        print('dir_{} - директория не существует'.format(name))
+
+def start ():
+    answer =''
+
+    while answer != '3':
+
+        answer = input('Выберите из списка:\n'
+                       '1. Создать директории dir_1 - dir_9\n'
+                       '2. Удалить директории dir_1 - dir_9\n'
+                       '3. Выйти\n')
+        if answer =='3':
+            break
+        if answer == '1':
+            for i in range(1, 10):
+                make_dir('dir_' + str(i))
+
+        elif answer == '2':
+            for i in range(1, 10):
+                remove_dir('dir_' + str(i))
+
+if __name__ == '__main__':
+    start()
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
